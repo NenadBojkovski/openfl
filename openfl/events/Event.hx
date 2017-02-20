@@ -66,7 +66,7 @@ class Event {
 		this.type = type;
 		this.bubbles = bubbles;
 		this.cancelable = cancelable;
-		eventPhase = EventPhase.CAPTURING_PHASE;
+		eventPhase = EventPhase.AT_TARGET;
 		
 	}
 	

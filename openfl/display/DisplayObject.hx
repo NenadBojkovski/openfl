@@ -362,7 +362,11 @@ class DisplayObject extends EventDispatcher implements IBitmapDrawable #if openf
 
 		if (event.type == Event.ADDED_TO_STAGE){
 			if (parent != null && parent != this) {
-				parent.__targetDispatcher = this;
+				if(this.__targetDispatcher != null) {
+				    parent.__targetDispatcher = this.__targetDispatcher;
+				} else {
+				    parent.__targetDispatcher = this;
+				}
 				parent.dispatchEvent(event);
 			}
 		}
